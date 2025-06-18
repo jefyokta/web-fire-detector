@@ -1,0 +1,24 @@
+services:
+  app:
+    container_name: fire-detector
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      APP_DEBUG: true
+      APP_HOST: "0.0.0.0"
+      APP_PORT: "8000"
+      VITE_HOST: "127.0.0.1"
+      DB_NAME: "fire_detector"
+      DB_PORT: "3306"
+      DB_HOST: mysql
+      DB_USER: "root"
+      DB_PASS: ""
+volumes:
+  db_data:

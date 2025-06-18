@@ -1,0 +1,23 @@
+{
+  "resources/js/Pages/Index.tsx": {
+    "file": "assets/Index-BXncZsGF.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-CZhPGvmS.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Index.tsx"
+    ],
+    "css": [
+      "assets/app-UBN0Y7G1.css"
+    ]
+  }
+}

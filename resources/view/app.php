@@ -13,7 +13,7 @@ if (file_exists($hotFile)) {
     }
 } elseif (file_exists($manifestPath)) {
     $manifest = json_decode(file_get_contents($manifestPath), true);
-    $entry = $manifest["resources/js/main.tsx"] ?? null;
+    $entry = $manifest["resources/js/app.tsx"] ?? null;
 
     if (!$entry || !isset($entry['file'])) {
         throw new RuntimeException("Broken manifest file");
