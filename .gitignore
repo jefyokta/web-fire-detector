@@ -26,3 +26,5 @@ vendor
 .env
 composer.lock
 package-lock.json
+
+public/build
