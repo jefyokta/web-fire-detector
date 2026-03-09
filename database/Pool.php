@@ -4,11 +4,12 @@ namespace App\Database;
 
 use Swoole\ConnectionPool;
 use PDO;
+use RuntimeException;
 
 class Pool
 {
     /**
-     * @var \Swoole\ConnectionPool<\PDO>
+     * @var \Swoole\ConnectionPool<PDO>
      */
     protected static $connection;
 
@@ -35,7 +36,7 @@ class Pool
 
     static function get()
     {
-        return self::$connection->get();
+        return self::$connection->get() ?? throw new RuntimeException("Connection is empty");
     }
 
     static function fill()
@@ -43,7 +44,7 @@ class Pool
         return self::$connection->fill();
     }
 
-    static function put($pdo)
+    static function put(PDO $pdo)
     {
         return self::$connection->put($pdo);
     }
